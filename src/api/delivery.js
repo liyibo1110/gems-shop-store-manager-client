@@ -1,5 +1,13 @@
 import request from '@/utils/request'
 
+export function deliveryAll(data) {
+  return request({
+    url: '/api/delivery/all',
+    method: 'post',
+    data
+  })
+}
+
 export function deliveryList(data) {
   return request({
     url: '/api/delivery/list',

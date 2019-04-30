@@ -39,15 +39,15 @@ export const constantRouterMap = [
   },
 
   {
-    path: '/goods',
+    path: '/good',
     component: Layout,
-    redirect: '/goods/index',
+    redirect: '/good/index',
     meta: { title: '商品管理', icon: 'list' },
     children: [
       {
-        path: '/goods/index',
+        path: '/good/index',
         name: '商品列表',
-        component: () => import('@/views/category/index'),
+        component: () => import('@/views/good/index'),
         meta: { title: '商品列表', icon: 'list' }
       },
       {
@@ -79,7 +79,32 @@ export const constantRouterMap = [
       }
     ]
   },
-
+  {
+    path: '/good/create',
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: '/good/create',
+        name: '新增商品',
+        component: () => import('@/views/good/create'),
+        meta: { title: '新增商品' }
+      }
+    ]
+  },
+  {
+    path: '/good/modify',
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: '/good/modify',
+        name: '修改商品',
+        component: () => import('@/views/good/modify'),
+        meta: { title: '修改商品' }
+      }
+    ]
+  },
   {
     path: '/delivery/create',
     component: Layout,

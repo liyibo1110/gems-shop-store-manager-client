@@ -8,7 +8,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import '@/styles/index.scss' // global css
 
 import VueVideoPlayer from 'vue-video-player'
-
+import VueUeditorWrap from 'vue-ueditor-wrap'
 import App from './App'
 import router from './router'
 import store from './store'
@@ -18,7 +18,7 @@ import '@/permission' // permission control
 
 Vue.use(ElementUI)
 Vue.use(VueVideoPlayer)
-
+Vue.component('vue-ueditor-wrap', VueUeditorWrap)
 Vue.config.productionTip = false
 
 new Vue({

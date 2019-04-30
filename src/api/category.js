@@ -1,5 +1,13 @@
 import request from '@/utils/request'
 
+export function categoryAll(data) {
+  return request({
+    url: '/api/category/all',
+    method: 'post',
+    data
+  })
+}
+
 export function categoryList(data) {
   return request({
     url: '/api/category/list',
