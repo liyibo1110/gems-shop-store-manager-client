@@ -60,6 +60,35 @@ export const constantRouterMap = [
   },
 
   {
+    path: '/order',
+    component: Layout,
+    redirect: '/order/index',
+    meta: { title: '订单管理', icon: 'list' },
+    children: [
+      {
+        path: '/order/index',
+        name: '订单列表',
+        component: () => import('@/views/order/index'),
+        meta: { title: '订单列表', icon: 'list' }
+      }
+    ]
+  },
+
+  {
+    path: '/order/detail',
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: '/order/detail',
+        name: '订单明细',
+        component: () => import('@/views/order/detail'),
+        meta: { title: '订单明细' }
+      }
+    ]
+  },
+
+  {
     path: '/setting',
     component: Layout,
     redirect: '/delivery/index',
