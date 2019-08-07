@@ -5,7 +5,7 @@
       :show-header="showHeader"
       border
       fit
-      style="width: 100%;">
+      style="width: 100%; margin-bottom: 20px">
       <el-table-column label="订单信息" min-width="55px">
         <template slot-scope="scope">
           <span>{{ scope.row[0] }}</span>
@@ -42,9 +42,6 @@
         </template>
       </el-table-column>
     </el-table>
-
-    <br />
-
     <el-table
       :data="listProcessed"
       :show-header="showHeader"
@@ -53,7 +50,8 @@
       style="width: 100%;">
       <el-table-column label="订单信息" min-width="55px">
         <template slot-scope="scope">
-          <span>{{ scope.row.addTime | parseTime('{y}-{m}-{d} {h}:{i}:{s}') }} <br /> 订单号：{{ scope.row.orderNo }}</span>
+          <div>{{ scope.row.addTime | parseTime('{y}-{m}-{d} {h}:{i}:{s}') }}</div>
+          <div>订单号：{{ scope.row.orderNo }}</div>
         </template>
       </el-table-column>
       <el-table-column label="商品信息" min-width="80px">
@@ -98,9 +96,7 @@
       <el-table-column label="交易状态" min-width="40px">
         <template slot-scope="scope">
           <span>付款状态：{{ scope.row.payStatus | payStatusFilter }}</span>
-          <br />
           <span>发货状态：{{ scope.row.deliveryStatus | deliveryStatusFilter }}</span>
-          <br />
           <span>收货状态：{{ scope.row.receiptStatus | receiptStatusFilter }}</span>
         </template>
       </el-table-column>
